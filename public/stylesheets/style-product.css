@@ -1,0 +1,340 @@
+/* Product Details page styling*/
+
+
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+/* Header Styles */
+header {
+    background-color: #b25e5e;
+    padding: 20px;
+    color: rgb(8, 8, 8);
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    width: 100%;
+}
+
+.logo img {
+    width: 100%;       
+    max-width: 500px;   
+    height: auto;  
+}
+
+/* Search Bar and Icons Container */
+.search-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; 
+    width: 100%; 
+    padding: 10px 0;
+}
+
+/* Search Bar */
+.search-bar {
+    width: 80%; 
+    padding: 8px;
+    gap: 20px;
+    border-radius: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.icons {
+    color: #ddd;
+    font-size: 25px;
+}
+
+/* Breakpoint for Larger Screens */
+@media (min-width: 640px) {
+    .header-container {
+        flex-direction: row;
+        align-items: center; 
+        justify-content: space-between;
+    }
+
+    .search-container {
+        width: 100%;
+        align-items: flex-start;
+        margin-left: 20px; 
+    }
+
+    .search-bar {
+        width: 70%; 
+    }
+}
+
+.icon-heart-link,
+.icon-basket-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.icon-heart-link:hover,
+.icon-basket-link:hover {
+    color: #030303;
+}
+
+/* navigation menu */
+.navigation-menu {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+.navigation-menu p {
+    margin: 0; 
+    color: white;
+    padding-top: 20px;
+}
+
+.navigation-menu a {
+    text-decoration: none; 
+    color: inherit; /* links take the color of their parent element */
+}
+
+/* Media query for larger screens */
+@media (min-width: 640px) {
+    .navigation-menu {
+        flex-direction: row; 
+        justify-content: flex-start; 
+        padding: 0; 
+    }
+
+    .navigation-menu p {
+        margin: 0 5px;
+        font-size: 18px;
+    }
+}
+a {
+    text-decoration: none; /*removes underline from text with links from all the body*/
+    color: black;
+}
+
+.product-details {
+    padding: 20px;
+}
+
+.product-card {
+    display: flex; 
+    align-items: flex-start; 
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Adjust product image and icon position */
+.product-image-container {
+    position: relative;
+    width: 50%; 
+    margin-right: 20px; 
+}
+
+.product-image-container img {
+    width: 100%; 
+    border-radius: 10px; 
+}
+
+.icon-heart {
+    position: absolute;
+    bottom: 10px; 
+    right: 10px; 
+    font-size: 24px;
+    color: white; 
+}
+
+/* Product Info Section */
+.product-info {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    width: 50%; /
+}
+.add-to-cart-btn {
+    width: 100%; /* Button takes full width in mobile view */
+    padding: 12px; 
+    background-color: #007bff; 
+    color: white; 
+    border: none; 
+    border-radius: 5px;
+    font-size: 1rem; 
+    cursor: pointer; 
+    transition: background-color 0.5s ease; 
+}
+
+
+.add-to-cart-btn:hover {
+    background-color: #0056b3;
+}
+@media (max-width: 639px) {
+    .product-card {
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center; 
+    }
+
+    .product-image-container {
+        width: 100%; 
+        margin-right: 0; 
+    }
+
+    .product-info {
+        width: 100%; 
+        padding: 10px 0; 
+    }
+}
+@media (min-width: 640px) {
+    .add-to-cart-btn {
+        padding: 12px 0px; /* padding for larger screens */
+        width: 150px; 
+    }
+}
+
+
+/* Similar Products Section */
+.similar-products {
+    display: none; /* Hide in mobile view */
+}
+
+@media (min-width: 640px) {
+    .similar-products {
+        display: block; 
+    }
+
+    .similar-products h3 {
+        text-align: center; 
+        margin-bottom: 20px; /* space below the heading */
+    }
+
+    .similar-product-grid {
+        display: grid; 
+        grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+        gap: 10px; /* gap between products */
+    }
+}
+
+/* Similar Product Card Styling */
+.similar-product-card {
+    text-align: center; 
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    padding: 10px; 
+    background-color: white; 
+}
+
+/* Adjust the small product image */
+.small-product-image {
+    width: 80%; 
+    height: auto; 
+    border-radius: 5px; 
+}
+
+
+/* Styling name and price */
+.small-product-info {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-top: 5px; /* Space above the info */
+}
+.brand {text-align: left}
+
+/* Information Grid Section */
+.info-grid {
+    display: grid;
+    text-align: left;
+    grid-template-columns: 1fr; /* Single column */
+    gap: 20px; 
+    padding: 40px 20px; 
+}
+
+/* Information items styling */
+.info-item {
+    justify-content: center; 
+    background-color: #f4f4f4; 
+    padding: 20px; 
+    transition: background-color 0.5s; /* Transition effect */
+}
+
+.info-item:hover {
+    background-color: #e0e0e0; /* Change background on hover */
+}
+
+.info-item i {
+    font-size: 2rem; /* Icon size */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+/* Responsive Styles for screens >= 640px */
+@media (min-width: 640px) {
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns */
+    }
+}
+
+/* Responsive Styles for screens >= 1024px */
+@media (min-width: 1024px) {
+    .info-grid {
+        grid-template-columns: repeat(4, 1fr); /* Four columns, one row */
+    }
+}
+
+/* Footer */
+
+/* Accordion styles (mobile first)*/
+.accordion {
+    display: block; /* Show accordion by default for mobile */
+}
+
+/* Footer for larger screens */
+.footer-content {
+    display: none; /* Hide the normal footer for mobile view */
+}
+
+/* Footer Trademark */
+.footer-trademark {
+    text-align: center; 
+    margin-top: 20px;
+}
+
+/* Styles for screens ≥ 640px */
+@media (min-width: 640px) {
+   
+    .accordion {
+        display: none; /* Hide accordion for larger screens */
+    }
+
+    /* Show the regular footer */
+
+    footer {
+        background-color: #b25e5e; 
+        color: white;
+        padding: 20px; 
+    }
+    
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+        gap: 20px; 
+    }
+    
+    }
+    
+    .footer-column h4 {
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+    }
+    
+    .footer-column p {
+        margin: 5px 0; 
+        color: white;
+    }

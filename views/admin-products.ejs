@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Administration</h1>
+    </header>
+
+    <div class="admin-container">
+        <div class="sidebar">
+            <h2>Produkter</h2>
+        </div>
+
+        <main>
+            <div class="top-section">
+                <h2>Produkter</h2>
+                <a href="/admin/products/new" class="new-product-button">Ny produkt</a>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Namn</th>
+                        <th>SKU</th>
+                        <th>Pris</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% products.forEach(product => { %>
+                        <tr>
+                            <td><%= product.name %></td>
+                            <td><%= product.sku %></td>
+                            <td><%= product.price %> SEK</td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </main>
+    </div>
+</body>
+</html>

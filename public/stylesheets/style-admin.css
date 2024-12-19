@@ -1,0 +1,150 @@
+
+
+
+/* Header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 35px 35px;
+    text-align: left;
+}
+
+header h1 {
+    margin: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+/* Admin Container */
+.admin-container {
+    display: flex;
+    padding: 20px;
+    height: 100vh; /* Ensure the container takes the full height of the viewport */
+}
+
+/* Sidebar Section */
+.sidebar {
+    width: 15%;  
+    background-color: #6b6565;
+    padding: 20px;
+    height: 90vh; /* Sidebar remains full height */
+    position: absolute;
+}
+
+.sidebar h2 {
+    font-size: 24px;
+}
+
+/* Main Content Section */
+main {
+    margin-left: 20%; 
+    padding: 20px; 
+    width: 80%; 
+}
+
+/* Produker and Ny produkt Button */
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.new-product-button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.new-product-button:hover {
+    background-color: #218838;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #757171;
+    color: white;
+}
+
+
+/* Form Section (new.html) */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Form Labels and Inputs */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="file"],
+input[type="number"],
+textarea {
+    width: 50%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Textarea Styling */
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Categories Section*/
+.categories label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Button Styling */
+button[type="submit"] {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}

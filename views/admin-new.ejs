@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration</title>
+    <link rel="stylesheet" href="/stylesheets/style-admin.css">
+</head>
+<body>
+    <header>
+        <h1>Administration</h1>
+    </header>
+
+    <div class="admin-container">
+        <div class="sidebar">
+            <h2>Produkter</h2>
+        </div>s
+
+        <main>
+            <h2>Ny produkt</h2>
+            <form action="/admin/products" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="name">Namn</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Beskrivning</label>
+                    <textarea id="description" name="description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="image">Bild</label>
+                    <input type="file" id="image" name="image">
+                </div>
+                <div class="form-group">
+                    <label for="sku">SKU</label>
+                    <input type="text" id="sku" name="sku" required>
+                </div>
+                <div class="form-group">
+                    <label for="price">Pris</label>
+                    <input type="number" id="price" name="price" required>
+                </div>
+                <div class="form-group categories">
+                    <label>Kategorier</label>
+                    <label><input type="checkbox" name="categories" value="T-Shirt"> T-Shirt</label>
+                    <label><input type="checkbox" name="categories" value="Sommar"> Sommar</label>
+                    <label><input type="checkbox" name="categories" value="Byxor"> Byxor</label>
+                    <label><input type="checkbox" name="categories" value="Skor"> Skor</label>
+                </div>
+                <button type="submit">Lägg till</button>
+            </form>
+        </main>
+    </div>
+</body>
+</html>
