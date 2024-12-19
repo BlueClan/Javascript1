@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administration</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="/stylesheets/style-admin.css">
 </head>
 <body>
     <header>
@@ -19,9 +19,11 @@
         <main>
             <div class="top-section">
                 <h2>Produkter</h2>
-                <a href="/admin/products/new" class="new-product-button">Ny produkt</a>
+                <div class="button-container">
+                    <button id="load-products" class="load-products-button">Ladda produkter</button>
+                    <a href="/admin/products/new" class="new-product-button">Ny produkt</a>
+                </div>
             </div>
-
             <table>
                 <thead>
                     <tr>
@@ -30,7 +32,7 @@
                         <th>Pris</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="product-table-body">
                     <% products.forEach(product => { %>
                         <tr>
                             <td><%= product.name %></td>
@@ -42,5 +44,7 @@
             </table>
         </main>
     </div>
+
+    <script src="/javascripts/admin.js"></script>
 </body>
 </html>

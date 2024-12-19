@@ -1,15 +1,13 @@
-var express = require('express');
-var router = express.Router();
-var sqlite3 = require('sqlite3').verbose();
+const express = require('express');
+const router = express.Router();
+const db = require('../db/db'); // Points to db.js inside the db folder
+console.log('Database loaded:', db);
 
-// Connect to the SQLite3 database
-let db = new sqlite3.Database('./database.db'); // Change this path to your actual database location
-
-// Route to get all products for admin-products.ejs
+// Get all products and render the admin-products page
 router.get('/products', (req, res) => {
     db.all('SELECT * FROM products', (err, rows) => {
         if (err) {
-            console.error(err);
+            console.error('Database error:', err.message);
             res.status(500).send('Database error');
         } else {
             res.render('admin-products', { products: rows });
@@ -17,26 +15,25 @@ router.get('/products', (req, res) => {
     });
 });
 
-// Route to display the new product form
+// Render the admin-new page
 router.get('/products/new', (req, res) => {
     res.render('admin-new');
 });
 
-// Route to handle form submission and add a new product
-router.post('/products', (req, res) => {
-    const { name, description, image, sku, price, categories } = req.body;
-    
-    // Insert the new product into the database
-    const stmt = db.prepare('INSERT INTO products (name, description, image, sku, price, categories) VALUES (?, ?, ?, ?, ?, ?)');
-    stmt.run(name, description, image, sku, price, categories.join(','), (err) => {
-        if (err) {
-            console.error(err);
-            res.status(500).send('Error saving product');
-        } else {
-            res.redirect('/admin/products');
+// Handle form submissions for adding new products
+router.post('/products/new', (req, res) => {
+    const { name, sku, price, image, description, categories } = req.body;
+    db.run(
+        'INSERT INTO products (name, sku, price, image, description, categories) VALUES (?, ?, ?, ?, ?, ?)',
+        [name, sku, price, image, description, categories],
+        function (err) {
+            if (err) {
+                console.error(err.message);
+                return res.status(500).send('Error adding product');
+            }
+            res.redirect('/admin/products'); // Redirect to the product list after adding
         }
-    });
-    stmt.finalize();
+    );
 });
 
 module.exports = router;

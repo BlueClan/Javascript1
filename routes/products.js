@@ -1,7 +1,5 @@
 var express = require('express');
 var router = express.Router();
-
-// Example product data (replace with database later)
 const products = [
     { id: 1, name: 'Alpha T-Shirt', price: 199, image: '/images/1.jpg', slug: 'alpha-tshirt', brand: 'Levis',},
     { id: 2, name: 'Beta T-Shirt', price: 199, image: '/images/2.jpg', slug: 'beta-tshirt', brand: 'Levis' },
@@ -12,8 +10,6 @@ const products = [
     { id: 7, name: 'Golf T-Shirt', price: 199, image: '/images/7.jpg', slug: 'golf-tshirt', brand: 'Levis' },
     { id: 8, name: 'Hotel T-Shirt', price: 199, image: '/images/8.jpg', slug: 'hotel-tshirt', brand: 'Levis' },
   ];
-
-// Route: Product Detail Page
 router.get('/:slug', (req, res) => {
     const slug = req.params.slug;
     const product = products.find(p => p.slug === slug);
@@ -24,13 +20,11 @@ router.get('/:slug', (req, res) => {
             error: { status: 404, stack: '' }
         });
     }
-
-    // Find similar products
+    // to generate similar products
     const similarProducts = products.filter(p => p.slug !== slug).slice(0, 3);
 
     res.render('product', { product, similarProducts });
 });
-
 module.exports = router;
 
 

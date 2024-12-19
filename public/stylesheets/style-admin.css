@@ -47,27 +47,33 @@ main {
     width: 80%; 
 }
 
-/* Produker and Ny produkt Button */
-.top-section {
+/* Styling for the button container */
+.button-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end; /* Align buttons to the right */
     align-items: center;
-    margin-bottom: 20px;
 }
 
-.new-product-button {
-    padding: 10px 20px;
-    background-color: #28a745;
+/* Styling for both buttons */
+.new-product-button, .load-products-button {
+    padding: 10px 15px;
+    margin-right: 10px;
+    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
-    text-decoration: none;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline from <a> tag */
 }
 
-.new-product-button:hover {
-    background-color: #218838;
+/* Hover effect for buttons */
+.new-product-button:hover, .load-products-button:hover {
+    background-color: #0056b3;
+}
+
+/* Specific style to remove underline for anchor tag buttons */
+.new-product-button {
+    text-decoration: none;
 }
 
 /* Table Styling */
