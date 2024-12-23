@@ -1,0 +1,111 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 35px 35px;
+    text-align: left;
+}
+
+header h1 {
+    margin: 0;
+}
+
+
+.admin-container {
+    display: flex;
+    padding: 20px;
+    height: 100vh; 
+}
+
+
+.sidebar {
+    width: 15%;
+    background-color: #6b6565;
+    padding: 20px;
+    height: 90vh; /* Full height but not crossing the header */
+    position: absolute;
+}
+
+.sidebar h2 {
+    font-size: 24px;
+    color: white;
+}
+
+
+main {
+    margin-left: 18%; 
+    padding: 20px;
+    width: 70%; 
+}
+
+main .top-section {
+    margin-bottom: 20px;
+}
+
+main h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+form#new-product-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Limit the width */
+}
+
+form#new-product-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form#new-product-form input[type="text"],
+form#new-product-form textarea,
+form#new-product-form input[type="file"],
+form#new-product-form input[type="number"] {
+    width: 100%; /* Full-width inputs */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form#new-product-form input#sku,
+form#new-product-form input#price {
+    width: 30%; 
+}
+
+form#new-product-form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+form#new-product-form button[type="submit"] {
+    padding: 8px 12px; /*smaller button */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+    width: auto; 
+    text-align: left;
+    margin: 10px 0 0 0;
+}
+
+form#new-product-form button[type="submit"]:hover {
+    background-color: #0056b3;
+}

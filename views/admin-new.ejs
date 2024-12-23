@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administration</title>
-    <link rel="stylesheet" href="/stylesheets/style-admin.css">
+    <title>Administration - Ny Produkt</title>
+    <link rel="stylesheet" href="/stylesheets/style-admin-new.css">
 </head>
 <body>
     <header>
@@ -12,43 +12,89 @@
     </header>
 
     <div class="admin-container">
+        <!-- Sidebar Section -->
         <div class="sidebar">
             <h2>Produkter</h2>
-        </div>s
+        </div>
 
+        <!-- Main Content Section -->
         <main>
-            <h2>Ny produkt</h2>
-            <form action="/admin/products" method="POST" enctype="multipart/form-data">
+            <div class="top-section">
+                <h2>Ny Produkt</h2>
+            </div>
+
+            <!-- Form Section -->
+            <form id="new-product-form">
                 <div class="form-group">
-                    <label for="name">Namn</label>
+                    <label for="name">Namn:</label>
                     <input type="text" id="name" name="name" required>
                 </div>
+
                 <div class="form-group">
-                    <label for="description">Beskrivning</label>
-                    <textarea id="description" name="description" required></textarea>
+                    <label for="description">Beskrivning:</label>
+                    <textarea id="description" name="description"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="image">Bild</label>
-                    <input type="file" id="image" name="image">
+                    <label for="image">Bild:</label>
+                    <input type="file" id="image" name="image" accept="image/*">
                 </div>
+
                 <div class="form-group">
-                    <label for="sku">SKU</label>
+                    <label for="categories">Märke:</label>
+                    <input type="text" id="categories" name="categories">
+                </div>
+                
+                <div class="form-group">
+                    <label for="sku">SKU:</label>
                     <input type="text" id="sku" name="sku" required>
                 </div>
+
                 <div class="form-group">
-                    <label for="price">Pris</label>
+                    <label for="price">Pris:</label>
                     <input type="number" id="price" name="price" required>
                 </div>
-                <div class="form-group categories">
-                    <label>Kategorier</label>
-                    <label><input type="checkbox" name="categories" value="T-Shirt"> T-Shirt</label>
-                    <label><input type="checkbox" name="categories" value="Sommar"> Sommar</label>
-                    <label><input type="checkbox" name="categories" value="Byxor"> Byxor</label>
-                    <label><input type="checkbox" name="categories" value="Skor"> Skor</label>
-                </div>
+
                 <button type="submit">Lägg till</button>
             </form>
         </main>
     </div>
+
+    <script>
+        document.getElementById('new-product-form').addEventListener('submit', async (event) => {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Collect form data
+            const formData = {
+                name: document.getElementById('name').value,
+                sku: document.getElementById('sku').value,
+                price: document.getElementById('price').value,
+                image: document.getElementById('image').value,
+                description: document.getElementById('description').value,
+                categories: document.getElementById('categories').value,
+            };
+
+            try {
+                // Send data to backend using Fetch API
+                const response = await fetch('/admin/products/new', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData),
+                });
+
+                if (response.ok) {
+                    alert('Produkten har lagts till!');
+                    window.location.href = '/admin/products'; // Redirect to the products page
+                } else {
+                    const error = await response.json();
+                    alert('Ett fel uppstod: ' + error.message);
+                }
+            } catch (error) {
+                console.error('Fetch error:', error);
+                alert('Ett nätverksfel uppstod.');
+            }
+        });
+    </script>
 </body>
 </html>

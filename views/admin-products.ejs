@@ -33,18 +33,58 @@
                     </tr>
                 </thead>
                 <tbody id="product-table-body">
-                    <% products.forEach(product => { %>
-                        <tr>
-                            <td><%= product.name %></td>
-                            <td><%= product.sku %></td>
-                            <td><%= product.price %> SEK</td>
-                        </tr>
-                    <% }); %>
+                    <!-- The table will be dynamically populated with JavaScript -->
                 </tbody>
             </table>
         </main>
     </div>
+    <script>
+        // Handle the "Ladda produkter" button click
+        document.querySelector("#load-products").addEventListener("click", async () => {
+            console.log("Ladda produkter knappen klickades!");
+            try {
+                const response = await fetch('/admin/api/products');
+                if (!response.ok) {
+                    throw new Error("Något gick fel vid hämtning av produkter.");
+                }
 
-    <script src="/javascripts/admin.js"></script>
+                const products = await response.json();
+                console.log("Produkter hämtade:", products);
+
+                // Call a function to update the table
+                updateProductTable(products);
+            } catch (error) {
+                console.error("Fel vid hämtning av produkter:", error);
+            }
+        });
+
+        // Function to dynamically populate the product table
+        function updateProductTable(products) {
+            const tbody = document.querySelector('#product-table-body');
+            tbody.innerHTML = ''; // Clear existing rows
+
+            products.forEach(product => {
+                const tr = document.createElement('tr');
+
+                const nameCell = createTableCell(product.name);
+                const skuCell = createTableCell(product.sku);
+                const priceCell = createTableCell(`${product.price} SEK`);
+
+                tr.appendChild(nameCell);
+                tr.appendChild(skuCell);
+                tr.appendChild(priceCell);
+
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Helper function to create a table cell
+        function createTableCell(value) {
+            const td = document.createElement('td');
+            td.textContent = value;
+            return td;
+        }
+    </script>
 </body>
 </html>
+

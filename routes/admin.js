@@ -1,26 +1,21 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../db/db'); // Points to db.js inside the db folder
+const db = require('../db/db'); // Points to db.js
+
+// Log to confirm database is loaded
 console.log('Database loaded:', db);
 
-// Get all products and render the admin-products page
+// Route to get all products and render the admin-products page
 router.get('/products', (req, res) => {
-    db.all('SELECT * FROM products', (err, rows) => {
-        if (err) {
-            console.error('Database error:', err.message);
-            res.status(500).send('Database error');
-        } else {
-            res.render('admin-products', { products: rows });
-        }
-    });
+    res.render('admin-products', { products: [] }); // Pass an empty array initially
 });
 
-// Render the admin-new page
+// Route to render the form for adding a new product
 router.get('/products/new', (req, res) => {
     res.render('admin-new');
 });
 
-// Handle form submissions for adding new products
+// Route to handle form submissions for adding new products
 router.post('/products/new', (req, res) => {
     const { name, sku, price, image, description, categories } = req.body;
     db.run(
@@ -28,12 +23,24 @@ router.post('/products/new', (req, res) => {
         [name, sku, price, image, description, categories],
         function (err) {
             if (err) {
-                console.error(err.message);
-                return res.status(500).send('Error adding product');
+                console.error('Database insertion error:', err.message);
+                return res.status(500).json({ message: 'Error adding product' });
             }
-            res.redirect('/admin/products'); // Redirect to the product list after adding
+            res.status(200).json({ message: 'Product added successfully' }); // Return success response
         }
     );
+});
+
+// API route to fetch products (used by the Fetch API in the frontend)
+router.get('/api/products', (req, res) => {
+    db.all('SELECT * FROM products', (err, rows) => {
+        if (err) {
+            console.error('Database error:', err.message);
+            res.status(500).json({ error: 'Failed to fetch products' });
+        } else {
+            res.json(rows);
+        }
+    });
 });
 
 module.exports = router;

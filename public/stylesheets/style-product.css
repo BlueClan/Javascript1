@@ -1,15 +1,13 @@
-/* Product Details page styling*/
 
 
 
-/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
 }
-/* Header Styles */
+
 header {
     background-color: #b25e5e;
     padding: 20px;
@@ -39,7 +37,7 @@ header {
     padding: 10px 0;
 }
 
-/* Search Bar */
+
 .search-bar {
     width: 80%; 
     padding: 8px;
@@ -82,7 +80,7 @@ header {
     color: #030303;
 }
 
-/* navigation menu */
+
 .navigation-menu {
     display: flex;
     flex-direction: column;
@@ -97,7 +95,7 @@ header {
 
 .navigation-menu a {
     text-decoration: none; 
-    color: inherit; /* links take the color of their parent element */
+    color: inherit; 
 }
 
 /* Media query for larger screens */
@@ -114,7 +112,7 @@ header {
     }
 }
 a {
-    text-decoration: none; /*removes underline from text with links from all the body*/
+    text-decoration: none;
     color: black;
 }
 
@@ -152,7 +150,7 @@ a {
     color: white; 
 }
 
-/* Product Info Section */
+
 .product-info {
     display: flex;
     flex-direction: column; 
@@ -199,8 +197,6 @@ a {
     }
 }
 
-
-/* Similar Products Section */
 .similar-products {
     display: none; /* Hide in mobile view */
 }
@@ -212,17 +208,16 @@ a {
 
     .similar-products h3 {
         text-align: center; 
-        margin-bottom: 20px; /* space below the heading */
+        margin-bottom: 20px; 
     }
 
     .similar-product-grid {
         display: grid; 
         grid-template-columns: repeat(3, 1fr); /* Three equal columns */
-        gap: 10px; /* gap between products */
+        gap: 10px; 
     }
 }
 
-/* Similar Product Card Styling */
 .similar-product-card {
     text-align: center; 
     border: 1px solid #ddd; 
@@ -231,24 +226,21 @@ a {
     background-color: white; 
 }
 
-/* Adjust the small product image */
 .small-product-image {
     width: 80%; 
     height: auto; 
     border-radius: 5px; 
 }
 
-
-/* Styling name and price */
 .small-product-info {
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
-    margin-top: 5px; /* Space above the info */
+    margin-top: 5px; 
 }
 .brand {text-align: left}
 
-/* Information Grid Section */
+
 .info-grid {
     display: grid;
     text-align: left;
@@ -257,7 +249,6 @@ a {
     padding: 40px 20px; 
 }
 
-/* Information items styling */
 .info-item {
     justify-content: center; 
     background-color: #f4f4f4; 
@@ -266,41 +257,37 @@ a {
 }
 
 .info-item:hover {
-    background-color: #e0e0e0; /* Change background on hover */
+    background-color: #e0e0e0; 
 }
 
 .info-item i {
-    font-size: 2rem; /* Icon size */
-    margin-right: 10px; /* Space between icon and text */
+    font-size: 2rem; 
+    margin-right: 10px; 
 }
 
-/* Responsive Styles for screens >= 640px */
+/* for screens >= 640px */
 @media (min-width: 640px) {
     .info-grid {
         grid-template-columns: repeat(2, 1fr); /* Two columns */
     }
 }
 
-/* Responsive Styles for screens >= 1024px */
+/* for screens >= 1024px */
 @media (min-width: 1024px) {
     .info-grid {
-        grid-template-columns: repeat(4, 1fr); /* Four columns, one row */
+        grid-template-columns: repeat(4, 1fr); /* Four columns */
     }
 }
 
-/* Footer */
-
-/* Accordion styles (mobile first)*/
 .accordion {
     display: block; /* Show accordion by default for mobile */
 }
 
-/* Footer for larger screens */
+
 .footer-content {
     display: none; /* Hide the normal footer for mobile view */
 }
 
-/* Footer Trademark */
 .footer-trademark {
     text-align: center; 
     margin-top: 20px;
@@ -313,8 +300,6 @@ a {
         display: none; /* Hide accordion for larger screens */
     }
 
-    /* Show the regular footer */
-
     footer {
         background-color: #b25e5e; 
         color: white;
@@ -323,7 +308,7 @@ a {
     
     .footer-content {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+        grid-template-columns: repeat(3, 1fr); /* Three columns */
         gap: 20px; 
     }
     

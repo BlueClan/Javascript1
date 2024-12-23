@@ -1,7 +1,4 @@
 
-
-
-/* Header */
 header {
     background-color: #333;
     color: white;
@@ -20,19 +17,18 @@ body {
     background-color: #ffffff;
 }
 
-/* Admin Container */
 .admin-container {
     display: flex;
     padding: 20px;
-    height: 100vh; /* Ensure the container takes the full height of the viewport */
+    height: 100vh; 
 }
 
-/* Sidebar Section */
+
 .sidebar {
     width: 15%;  
     background-color: #6b6565;
     padding: 20px;
-    height: 90vh; /* Sidebar remains full height */
+    height: 90vh; 
     position: absolute;
 }
 
@@ -40,21 +36,18 @@ body {
     font-size: 24px;
 }
 
-/* Main Content Section */
 main {
     margin-left: 20%; 
     padding: 20px; 
     width: 80%; 
 }
 
-/* Styling for the button container */
 .button-container {
     display: flex;
-    justify-content: flex-end; /* Align buttons to the right */
+    justify-content: flex-end; 
     align-items: center;
 }
 
-/* Styling for both buttons */
 .new-product-button, .load-products-button {
     padding: 10px 15px;
     margin-right: 10px;
@@ -63,20 +56,17 @@ main {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    text-decoration: none; /* Remove underline from <a> tag */
+    text-decoration: none; 
 }
 
-/* Hover effect for buttons */
 .new-product-button:hover, .load-products-button:hover {
     background-color: #0056b3;
 }
 
-/* Specific style to remove underline for anchor tag buttons */
 .new-product-button {
     text-decoration: none;
 }
 
-/* Table Styling */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -94,63 +84,4 @@ th, td {
 th {
     background-color: #757171;
     color: white;
-}
-
-
-/* Form Section (new.html) */
-form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Form Group */
-.form-group {
-    margin-bottom: 20px;
-}
-
-/* Form Labels and Inputs */
-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-input[type="text"],
-input[type="file"],
-input[type="number"],
-textarea {
-    width: 50%;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-/* Textarea Styling */
-textarea {
-    height: 100px;
-    resize: vertical;
-}
-
-/* Categories Section*/
-.categories label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-/* Button Styling */
-button[type="submit"] {
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button[type="submit"]:hover {
-    background-color: #0056b3;
 }
