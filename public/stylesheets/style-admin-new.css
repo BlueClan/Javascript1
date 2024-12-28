@@ -6,7 +6,6 @@ body {
     background-color: #ffffff;
 }
 
-
 header {
     background-color: #333;
     color: white;
@@ -18,13 +17,11 @@ header h1 {
     margin: 0;
 }
 
-
 .admin-container {
     display: flex;
     padding: 20px;
     height: 100vh; 
 }
-
 
 .sidebar {
     width: 15%;
@@ -38,7 +35,6 @@ header h1 {
     font-size: 24px;
     color: white;
 }
-
 
 main {
     margin-left: 18%; 
@@ -72,7 +68,7 @@ form#new-product-form label {
 
 form#new-product-form input[type="text"],
 form#new-product-form textarea,
-form#new-product-form input[type="file"],
+form#new-product-form input[type="text"],
 form#new-product-form input[type="number"] {
     width: 100%; /* Full-width inputs */
     padding: 10px;

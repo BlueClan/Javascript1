@@ -280,12 +280,12 @@ a {
 }
 
 .accordion {
-    display: block; /* Show accordion by default for mobile */
+    display: block; 
 }
 
-
+/* Footer for larger screens */
 .footer-content {
-    display: none; /* Hide the normal footer for mobile view */
+    display: none; 
 }
 
 .footer-trademark {
@@ -293,11 +293,11 @@ a {
     margin-top: 20px;
 }
 
-/* Styles for screens ≥ 640px */
+/* For screens ≥ 640px */
 @media (min-width: 640px) {
    
     .accordion {
-        display: none; /* Hide accordion for larger screens */
+        display: none; 
     }
 
     footer {
@@ -308,7 +308,7 @@ a {
     
     .footer-content {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* Three columns */
+        grid-template-columns: repeat(3, 1fr); 
         gap: 20px; 
     }
     

@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= product.name %> - Freaky Fashion</title>
+    <title><%= product.name %></title>
     <link rel="stylesheet" href="/stylesheets/style-product.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
-
-    <!-- Header -->
+    
     <header>
         <div class="header-container">
             <div class="logo">
                 <a href="/">
-                    <img src="/images/logo.jpg" alt="Freaky Fashion Logo" class="logo-image">
+                    <img src="https://placehold.co/600x400/black/white?text=LOGO" alt="Freaky Fashion Logo" class="logo-image">
                 </a>
             </div>            
             <div class="search-container">
@@ -29,7 +28,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div class="navigation-menu">
             <p><a href="#">Nyheter</a></p>
             <p><a href="#">Topplistan</a></p>
@@ -38,7 +37,6 @@
         </div>
     </header>
 
-    <!-- Product Details Section -->
     <section class="product-details">
         <div class="product-card">
             <div class="product-image-container">
@@ -93,35 +91,70 @@
             <span>Nyheter varje dag</span>
         </div>
     </section>
-
-    <!-- Accordion Section -->
-    <div class="accordion accordion-flush" id="accordionFlushExample">
-        <!-- Add your accordion content here (unchanged from your original HTML) -->
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-column">
-                <h4>Shopping</h4>
-                <p>Vinterjackor</p>
-                <p>Pufferjackor</p>
-                <p>Kappa</p>
-                <p>Trenchcoats</p>
+        <footer>
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            Shopping
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>Vinterjackor</p>
+                            <p>Pufferjackor</p>
+                            <p>Kappa</p>
+                            <p>Trenchcoats</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            Mina Sidor
+                        </button>
+                    </h2>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>Mina Ordrar</p>
+                            <p>Mitt Konto</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                            Kundtjänst
+                        </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>Returnpolicy</p>
+                            <p>Integritetspolicy</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="footer-column">
-                <h4>Mina Sidor</h4>
-                <p>Mina Ordrar</p>
-                <p>Mitt Konto</p>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Shopping</h4>
+                    <p>Vinterjackor</p>
+                    <p>Pufferjackor</p>
+                    <p>Kappa</p>
+                    <p>Trenchcoats</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Mina Sidor</h4>
+                    <p>Mina Ordrar</p>
+                    <p>Mitt Konto</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Kundtjänst</h4>
+                    <p>Returnpolicy</p>
+                    <p>Integritetspolicy</p>
+                </div>
             </div>
-            <div class="footer-column">
-                <h4>Kundtjänst</h4>
-                <p>Returnpolicy</p>
-                <p>Integritetspolicy</p>
-            </div>
-        </div>
-        <p class="footer-trademark">&copy; Freaky Fashion</p>
-    </footer>
-
-</body>
+            <p class="footer-trademark">&copy; Freaky Fashion</p>
+        </footer>
+    </body>
 </html>

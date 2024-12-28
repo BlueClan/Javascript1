@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="sv">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Freaky Fashion</title>
@@ -8,189 +8,159 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
-
     <header>
         <div class="header-container">
-            <!-- Logo -->
             <div class="logo">
                 <a href="/">
-                    <img src="/images/logo.jpg" alt="Freaky Fashion Logo" class="logo-image">
+                    <img src="https://placehold.co/600x400/black/white?text=LOGO" alt="Freaky Fashion Logo" class="logo-image">
                 </a>
-            </div>            
+            </div>
             <div class="search-container">
                 <input type="text" placeholder="Sök produkt" class="search-bar">
                 <div class="icons">
                     <a href="#" class="icon-heart-link">
-                    <span class="icon-heart-header"><i class="bi bi-heart-fill"></i></span>
+                        <span class="icon-heart-header"><i class="bi bi-heart-fill"></i></span>
                     </a>
                     <a href="#" class="icon-basket-link">
-                      <span class="icon-basket"><i class="bi bi-basket2-fill"></i></span>
-                </a>
+                        <span class="icon-basket"><i class="bi bi-basket2-fill"></i></span>
+                    </a>
                 </div>
             </div>
         </div>
-        
-         <!-- Navigation Menu -->
         <div class="navigation-menu">
-    <p><a href="#">Nyheter</a></p>
-    <p><a href="#">Topplistan</a></p>
-    <p><a href="#">Rea</a></p>
-    <p><a href="#">Kampanjer</a></p>
-</div>
+            <p><a href="#">Nyheter</a></p>
+            <p><a href="#">Topplistan</a></p>
+            <p><a href="#">Rea</a></p>
+            <p><a href="#">Kampanjer</a></p>
+        </div>
     </header>
-    
-    
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <img src="images/Hero.jpg" alt="Hero Image" class="hero-image">
+            <img src="https://placehold.co/600x400/white/black?text=HERO" alt="Hero Image" class="hero-image">
             <div class="hero-text">
-                <h2>VINTER SALE UPP TLL 60%!</h2>
-                <p> Handla för mer än 300 SEK och få en gratis frakt!</p>
+                <h2>Lorem ipsum dolor</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam iure sapiente dolores et nostrum totam.</p>
             </div>
         </div>
     </section>
-    
-
-<!-- Spots Section -->
-<section class="spots">
-    <div class="spot-grid">
-        <div class="spot">
-            <a href="http://127.0.0.1:5501/product-details.html" class="spot-link">
-                <img src="images/spot1.jpg" alt="Spot 1" class="spot-image">
-                <div class="spot-text">Vinterkollektion</div>
-            </a>
+    <section class="spots">
+        <div class="spot-grid">
+            <div class="spot">
+                <img src="https://placehold.co/600x400/grey/yellow?text=LOREM" alt="Spot 1" class="spot-image">
+            </div>
+            <div class="spot">
+                <img src="https://placehold.co/600x400/grey/yellow?text=IPSUM" alt="Spot 2" class="spot-image">
+            </div>
+            <div class="spot">
+                <img src="https://placehold.co/600x400/grey/yellow?text=DOLOR" alt="Spot 3" class="spot-image">
+            </div>
         </div>
-        <div class="spot">
-            <a href="http://127.0.0.1:5501/product-details.html" class="spot-link">
-                <img src="images/spot2.jpg" alt="Spot 2" class="spot-image">
-                <div class="spot-text">Våra rekommendationer</div>
-            </a>
+    </section>
+    <section class="products">
+        <div class="product-grid">
+            <% if (products.length > 0) { %>
+                <% products.forEach(product => { %>
+                    <div class="product-card">
+                        <a href="/products/<%= product.slug %>" class="product-link" aria-label="View details of <%= product.name %>">
+                            <div class="image-container">
+                                <img src="<%= product.image %>" alt="<%= product.name %>" title="Image of <%= product.name %>" loading="lazy">
+                                <span class="icon-heart"><i class="bi bi-heart-fill"></i></span>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-name"><%= product.name %></h3>
+                                <p class="product-price"><%= product.price %> SEK</p>
+                            </div>
+                            <div class="brand"><%= product.brand %></div>
+                        </a>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <p>Inga produkter tillgängliga just nu.</p>
+            <% } %>
         </div>
-        <div class="spot">
-            <a href="http://127.0.0.1:5501/product-details.html" class="spot-link">
-                <img src="images/spot3.jpg" alt="Spot 3" class="spot-image">
-                <div class="spot-text">Bästsäljare</div>
-            </a>
+    </section>
+    <section class="info-grid">
+        <div class="info-item">
+            <i class="bi bi-globe-americas"></i>
+            <span>Gratis frakt och returer</span>
         </div>
-    </div>
-</section>
-
-<!-- Products Section -->
-<section class="products">
-  <div class="product-grid">
-      <% products.forEach(product => { %>
-          <div class="product-card">
-              <a href="/products/<%= product.slug %>" class="product-link">
-                  <div class="image-container">
-
-                      <!-- Display 'Nyhet' if the product is marked as new -->
-                      <% if (product.isNew) { %>
-                          <div class="new-box">Nyhet</div>
-                      <% } %>
-                      <img src="<%= product.image %>" alt="<%= product.name %>">
-                      <span class="icon-heart"><i class="bi bi-heart-fill"></i></span>
-                  </div>
-                  <div class="product-info">
-                      <h3 class="product-name"><%= product.name %></h3>
-                      <p class="product-price"><%= product.price %> SEK</p>
-                  </div>
-                  <div class="brand"><%= product.brand %></div>
-              </a>
-          </div>
-      <% }); %>
-  </div>
-</section>
-
-    <!-- Information Section -->
-<section class="info-grid">
-    <div class="info-item">
-        <i class="bi bi-globe-americas"></i>
-        <span>Gratis frakt och returer</span>
-    </div>
-    <div class="info-item">
-        <i class="bi bi-truck"></i>
-        <span>Expressfrakt</span>
-    </div>
-    <div class="info-item">
-        <i class="bi bi-shield-shaded"></i>
-        <span>Säkra betalningar</span>
-    </div>
-    <div class="info-item">
-        <i class="bi bi-emoji-smile"></i>
-        <span>Nyheter varje dag</span>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer>
-    <!-- Accordion for mobile view -->
-<div class="accordion accordion-flush" id="accordionFlushExample">
-    <div class="accordion-item">
-        <h2 class="accordion-header" id="flush-headingOne">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                Shopping
-            </button>
-        </h2>
-        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">
+        <div class="info-item">
+            <i class="bi bi-truck"></i>
+            <span>Expressfrakt</span>
+        </div>
+        <div class="info-item">
+            <i class="bi bi-shield-shaded"></i>
+            <span>Säkra betalningar</span>
+        </div>
+        <div class="info-item">
+            <i class="bi bi-emoji-smile"></i>
+            <span>Nyheter varje dag</span>
+        </div>
+    </section>
+    <footer>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Shopping
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <p>Vinterjackor</p>
+                        <p>Pufferjackor</p>
+                        <p>Kappa</p>
+                        <p>Trenchcoats</p>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Mina Sidor
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <p>Mina Ordrar</p>
+                        <p>Mitt Konto</p>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Kundtjänst
+                    </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <p>Returnpolicy</p>
+                        <p>Integritetspolicy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>Shopping</h4>
                 <p>Vinterjackor</p>
                 <p>Pufferjackor</p>
                 <p>Kappa</p>
                 <p>Trenchcoats</p>
             </div>
-        </div>
-    </div>
-    <div class="accordion-item">
-        <h2 class="accordion-header" id="flush-headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                Mina Sidor
-            </button>
-        </h2>
-        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">
+            <div class="footer-column">
+                <h4>Mina Sidor</h4>
                 <p>Mina Ordrar</p>
                 <p>Mitt Konto</p>
             </div>
-        </div>
-    </div>
-    <div class="accordion-item">
-        <h2 class="accordion-header" id="flush-headingThree">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                Kundtjänst
-            </button>
-        </h2>
-        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">
+            <div class="footer-column">
+                <h4>Kundtjänst</h4>
                 <p>Returnpolicy</p>
                 <p>Integritetspolicy</p>
             </div>
         </div>
-    </div>
-</div>
-
-
-    <!-- Normal footer for larger screens -->
-    <div class="footer-content">
-        <div class="footer-column">
-            <h4>Shopping</h4>
-            <p>Vinterjackor</p>
-            <p>Pufferjackor</p>
-            <p>Kappa</p>
-            <p>Trenchcoats</p>
-        </div>
-        <div class="footer-column">
-            <h4>Mina Sidor</h4>
-            <p>Mina Ordrar</p>
-            <p>Mitt Konto</p>
-        </div>
-        <div class="footer-column">
-            <h4>Kundtjänst</h4>
-            <p>Returnpolicy</p>
-            <p>Integritetspolicy</p>
-        </div>
-    </div>
-    <p class="footer-trademark">&copy; Freaky Fashion</p>
-</footer>
-    </body>
-    </html>
+        <p class="footer-trademark">&copy; Freaky Fashion</p>
+    </footer>
+</body>
+</html>
