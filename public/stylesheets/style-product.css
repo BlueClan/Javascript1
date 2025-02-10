@@ -243,10 +243,10 @@ a {
 
 .info-grid {
     display: grid;
-    text-align: left;
-    grid-template-columns: 1fr; /* Single column */
+    grid-template-columns: 1fr; 
     gap: 20px; 
     padding: 40px 20px; 
+    text-align: left; 
 }
 
 .info-item {
@@ -265,17 +265,17 @@ a {
     margin-right: 10px; 
 }
 
-/* for screens >= 640px */
+/* Responsive Styles for screens >= 640px */
 @media (min-width: 640px) {
     .info-grid {
-        grid-template-columns: repeat(2, 1fr); /* Two columns */
+        grid-template-columns: repeat(2, 1fr); 
     }
 }
 
-/* for screens >= 1024px */
+/* Responsive Styles for screens >= 1024px */
 @media (min-width: 1024px) {
     .info-grid {
-        grid-template-columns: repeat(4, 1fr); /* Four columns */
+        grid-template-columns: repeat(4, 1fr); 
     }
 }
 
@@ -323,3 +323,73 @@ a {
         margin: 5px 0; 
         color: white;
     }
+
+    /* Style the buttons that are used to open and close the accordion panel */
+ .accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+  }
+  
+  /* Add a background color to the button if it is clicked on*/
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+   
+  .accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+  }
+  
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+  
+  .accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: "\2212";
+  }
+  
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+  .panel {
+    display: contents
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.accordion.active {
+    background-color: #ddd;
+}
+
+.panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}

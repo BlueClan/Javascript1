@@ -46,13 +46,13 @@
     <section class="spots">
         <div class="spot-grid">
             <div class="spot">
-                <img src="https://placehold.co/600x400/grey/yellow?text=LOREM" alt="Spot 1" class="spot-image">
+                <img src="https://placehold.co/600x400/grey/yellow?text=SPOT1" alt="Spot 1" class="spot-image">
             </div>
             <div class="spot">
-                <img src="https://placehold.co/600x400/grey/yellow?text=IPSUM" alt="Spot 2" class="spot-image">
+                <img src="https://placehold.co/600x400/grey/yellow?text=SPOT2" alt="Spot 2" class="spot-image">
             </div>
             <div class="spot">
-                <img src="https://placehold.co/600x400/grey/yellow?text=DOLOR" alt="Spot 3" class="spot-image">
+                <img src="https://placehold.co/600x400/grey/yellow?text=SPOT3" alt="Spot 3" class="spot-image">
             </div>
         </div>
     </section>
@@ -98,49 +98,27 @@
         </div>
     </section>
     <footer>
-        <div class="accordion accordion-flush" id="accordionFlushExample">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingOne">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                        Shopping
-                    </button>
-                </h2>
-                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">
-                        <p>Vinterjackor</p>
-                        <p>Pufferjackor</p>
-                        <p>Kappa</p>
-                        <p>Trenchcoats</p>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                        Mina Sidor
-                    </button>
-                </h2>
-                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">
-                        <p>Mina Ordrar</p>
-                        <p>Mitt Konto</p>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                        Kundtjänst
-                    </button>
-                </h2>
-                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">
-                        <p>Returnpolicy</p>
-                        <p>Integritetspolicy</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <button class="accordion">Shopping</button>
+    <div class="panel">
+      <p>Vinterjackor</p>
+      <p>Pufferjackor</p>
+      <p>Kappa</p>
+      <p>Trenchcoats</p>
+    </div>
+    
+    <button class="accordion">Mina Sidor</button>
+    <div class="panel">
+      <p>Mina Ordrar</p>
+      <p>Mitt Konto</p>
+    </div>
+    
+    <button class="accordion">Kundtjänst</button>
+    <div class="panel">
+      <p>Returnpolicy</p>
+      <p>Integritetspolicy</p>
+
+
+    </div> 
         <div class="footer-content">
             <div class="footer-column">
                 <h4>Shopping</h4>
@@ -161,6 +139,22 @@
             </div>
         </div>
         <p class="footer-trademark">&copy; Freaky Fashion</p>
+        <script>document.addEventListener("DOMContentLoaded", function () {
+            let accordions = document.querySelectorAll(".accordion");
+        
+            accordions.forEach(accordion => {
+                accordion.addEventListener("click", function () {
+                    this.classList.toggle("active");
+        
+                    let panel = this.nextElementSibling;
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                    } else {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                    }
+                });
+            });
+        });</script>
     </footer>
 </body>
 </html>
