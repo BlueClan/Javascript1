@@ -346,14 +346,14 @@ header {
     margin-right: 10px; 
 }
 
-/* Responsive Styles for screens >= 640px */
+
 @media (min-width: 640px) {
     .info-grid {
         grid-template-columns: repeat(2, 1fr); 
     }
 }
 
-/* Responsive Styles for screens >= 1024px */
+
 @media (min-width: 1024px) {
     .info-grid {
         grid-template-columns: repeat(4, 1fr); 
@@ -364,7 +364,7 @@ header {
     display: block; 
 }
 
-/* Footer for larger screens */
+/* hide normal footer for larger screens */
 .footer-content {
     display: none; 
 }
@@ -374,7 +374,7 @@ header {
     margin-top: 20px;
 }
 
-/* For screens ≥ 640px */
+/* media queires for lager screen */
 @media (min-width: 640px) {
    
     .accordion {
@@ -405,7 +405,7 @@ header {
         color: white;
     }
 
-    /* Style the buttons that are used to open and close the accordion panel */
+    /* Styling for the accordion */
     .accordion {
         background-color: #eee;
         color: #444;
@@ -444,16 +444,15 @@ header {
         transition: max-height 0.3s ease-out;
     }
     
-    /* Ensure panels are hidden by default */
+
     .panel p {
-        margin: 10px 0;
+        margin: 10px 0; /*panel hidden by difault*/
     }
     
-   /* For screens ≥ 640px */
 @media (min-width: 640px) {
     .accordion,
     .panel {
-        display: none; /* Hide accordion on larger screens */
+        display: none; 
     }
 
     footer {
