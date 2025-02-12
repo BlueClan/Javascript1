@@ -98,63 +98,63 @@
         </div>
     </section>
     <footer>
-    <button class="accordion">Shopping</button>
-    <div class="panel">
-      <p>Vinterjackor</p>
-      <p>Pufferjackor</p>
-      <p>Kappa</p>
-      <p>Trenchcoats</p>
-    </div>
-    
-    <button class="accordion">Mina Sidor</button>
-    <div class="panel">
-      <p>Mina Ordrar</p>
-      <p>Mitt Konto</p>
-    </div>
-    
-    <button class="accordion">Kundtjänst</button>
-    <div class="panel">
-      <p>Returnpolicy</p>
-      <p>Integritetspolicy</p>
-
-
-    </div> 
-        <div class="footer-content">
-            <div class="footer-column">
-                <h4>Shopping</h4>
-                <p>Vinterjackor</p>
-                <p>Pufferjackor</p>
-                <p>Kappa</p>
-                <p>Trenchcoats</p>
-            </div>
-            <div class="footer-column">
-                <h4>Mina Sidor</h4>
-                <p>Mina Ordrar</p>
-                <p>Mitt Konto</p>
-            </div>
-            <div class="footer-column">
-                <h4>Kundtjänst</h4>
-                <p>Returnpolicy</p>
-                <p>Integritetspolicy</p>
-            </div>
+        <button class="accordion">Shopping</button>
+        <div class="panel">
+          <p>Vinterjackor</p>
+          <p>Pufferjackor</p>
+          <p>Kappa</p>
+          <p>Trenchcoats</p>
         </div>
-        <p class="footer-trademark">&copy; Freaky Fashion</p>
-        <script>document.addEventListener("DOMContentLoaded", function () {
-            let accordions = document.querySelectorAll(".accordion");
         
-            accordions.forEach(accordion => {
-                accordion.addEventListener("click", function () {
-                    this.classList.toggle("active");
+        <button class="accordion">Mina Sidor</button>
+        <div class="panel">
+          <p>Mina Ordrar</p>
+          <p>Mitt Konto</p>
+        </div>
         
-                    let panel = this.nextElementSibling;
-                    if (panel.style.maxHeight) {
-                        panel.style.maxHeight = null;
-                    } else {
-                        panel.style.maxHeight = panel.scrollHeight + "px";
-                    }
+        <button class="accordion">Kundtjänst</button>
+        <div class="panel">
+          <p>Returnpolicy</p>
+          <p>Integritetspolicy</p>
+    
+    
+        </div> 
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Shopping</h4>
+                    <p>Vinterjackor</p>
+                    <p>Pufferjackor</p>
+                    <p>Kappa</p>
+                    <p>Trenchcoats</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Mina Sidor</h4>
+                    <p>Mina Ordrar</p>
+                    <p>Mitt Konto</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Kundtjänst</h4>
+                    <p>Returnpolicy</p>
+                    <p>Integritetspolicy</p>
+                </div>
+            </div>
+            <p class="footer-trademark">&copy; Freaky Fashion</p>
+            <script>document.addEventListener("DOMContentLoaded", function () {
+                let accordions = document.querySelectorAll(".accordion");
+            
+                accordions.forEach(accordion => {
+                    accordion.addEventListener("click", function () {
+                        this.classList.toggle("active");
+            
+                        let panel = this.nextElementSibling;
+                        if (panel.style.maxHeight) {
+                            panel.style.maxHeight = null; // Collapse the panel
+                        } else {
+                            panel.style.maxHeight = panel.scrollHeight + "px"; // Expand the panel
+                        }
+                    });
                 });
-            });
-        });</script>
+            });</script>
     </footer>
 </body>
 </html>

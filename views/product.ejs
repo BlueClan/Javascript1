@@ -142,13 +142,13 @@
             
                         let panel = this.nextElementSibling;
                         if (panel.style.maxHeight) {
-                            panel.style.maxHeight = null;
+                            panel.style.maxHeight = null; // Collapse the panel
                         } else {
-                            panel.style.maxHeight = panel.scrollHeight + "px";
+                            panel.style.maxHeight = panel.scrollHeight + "px"; // Expand the panel
                         }
                     });
                 });
             });</script>
-        </footer>
+    </footer>
     </body>
 </html>
