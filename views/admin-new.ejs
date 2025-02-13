@@ -63,7 +63,7 @@
         document.getElementById('new-product-form').addEventListener('submit', async (event) => {
             event.preventDefault(); // Prevent the default form submission
 
-            // Collect form data
+            // For the form info
             const formData = {
                 name: document.getElementById('name').value,
                 sku: document.getElementById('sku').value,
@@ -74,7 +74,7 @@
             };
 
             try {
-                // Send data to backend using Fetch API
+                // Send data buy fetch
                 const response = await fetch('/admin/products/new', {
                     method: 'POST',
                     headers: {
@@ -85,7 +85,7 @@
 
                 if (response.ok) {
                     alert('Produkten har lagts till!');
-                    window.location.href = '/admin/products'; // Redirect to the products page
+                    window.location.href = '/admin/products'; // Redirect to the products page after entring a new product
                 } else {
                     const error = await response.json();
                     alert('Ett fel uppstod: ' + error.message);

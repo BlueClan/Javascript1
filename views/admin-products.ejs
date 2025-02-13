@@ -33,13 +33,13 @@
                     </tr>
                 </thead>
                 <tbody id="product-table-body">
-                    <!-- The table will be be populated with JavaScript with the script below-->
+                    <!-- table will be filled here-->
                 </tbody>
             </table>
         </main>
     </div>
     <script>
-        // Handle the "Ladda produkter" button click
+        // when clicking the load button
         document.querySelector("#load-products").addEventListener("click", async () => {
             console.log("Ladda produkter knappen klickades!");
             try {
@@ -58,7 +58,7 @@
             }
         });
 
-        // Function to dynamically populate the product table
+        // populate the product table
         function updateProductTable(products) {
             const tbody = document.querySelector('#product-table-body');
             tbody.innerHTML = ''; // Clear existing rows
@@ -78,7 +78,7 @@
             });
         }
 
-        // Helper function to create a table cell
+        // function to create a table cell to fit all products
         function createTableCell(value) {
             const td = document.createElement('td');
             td.textContent = value;

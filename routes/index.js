@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../db/db'); // connect to database
+const db = require('../db/db');
 
 router.get('/', function (req, res, next) {
     db.all('SELECT * FROM products', (err, products) => {

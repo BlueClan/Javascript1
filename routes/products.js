@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../db/db'); // Database connection
+const db = require('../db/db');
 
 router.get('/:slug', (req, res) => {
     const slug = req.params.slug;
 
-    // Fetch the product with the matching slug
+    // Fetch the product using slug
     db.get('SELECT * FROM products WHERE slug = ?', [slug], (err, product) => {
         if (err) {
             console.error('Error fetching product:', err.message);
@@ -15,7 +15,7 @@ router.get('/:slug', (req, res) => {
             return res.status(404).render('error', { message: 'Product not found', error: { status: 404, stack: '' } });
         }
 
-        // Fetch similar products (excluding the current product)
+        // Fetch similar products 
         db.all('SELECT * FROM products WHERE slug != ? LIMIT 3', [slug], (err, similarProducts) => {
             if (err) {
                 console.error('Error fetching similar products:', err.message);
