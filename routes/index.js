@@ -6,7 +6,7 @@ router.get('/', function (req, res, next) {
     db.all('SELECT * FROM products', (err, products) => {
         if (err) {
             console.error('Error fetching products:', err.message);
-            return res.status(500).render('error', { message: 'Database error', error: { status: 500, stack: '' } });
+            return res.status(500).render('error', { message: 'Database error' });
         }
         res.render('index', { products });
     });
